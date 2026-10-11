@@ -7,8 +7,13 @@
     "icon": "./assets/images/icon.png",
     "scheme": "gradecalculator",
     "userInterfaceStyle": "automatic",
+    "backgroundColor": "#6495ED",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.kellysullivan.gradeCalculator",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -28,7 +33,7 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#6495ED",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
@@ -37,6 +42,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c239ad45-d0d3-47c9-8ac8-c23f954205a3"
+      }
     }
   }
 }
