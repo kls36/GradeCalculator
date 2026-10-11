@@ -8,8 +8,8 @@ export default function Index() {
       <Text style={styles.bigText}>Welcome to your Grade Calculator!</Text>
       
       <Link href="/grade" asChild>
-        <Pressable style={styles.button}>
-          <Text style={styles.buttonText}>let's go calculate your grade!</Text>
+        <Pressable style={styles.homeButton}>
+          <Text style={styles.buttonText}>Let's go calculate your grade!</Text>
         </Pressable>  
       </Link>
     </View>

@@ -46,6 +46,13 @@ export const styles = StyleSheet.create({
     width: "100%",
   },
 
+  homeButton: {
+    backgroundColor: colors.navy,
+    borderRadius: 8,
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    marginTop: 30,
+  },
   button: {
     backgroundColor: colors.navy,
     borderRadius: 8,
@@ -57,21 +64,21 @@ export const styles = StyleSheet.create({
   buttonText: {
     color: colors.beige,
     fontFamily: "InstrumentBold",
-    fontSize: 18,
+    fontSize: 20,
     textAlign: 'center'
   },
   buttonText2: {
     color: colors.navy,
-    fontFamily: "InstrumentBold",
+    fontFamily: "InstrumentSemiBold",
     fontSize: 18,
     textAlign: 'center'
   },
   title: {
     fontFamily: "InstrumentBold",
     color: colors.navy,
-    fontSize: 32,
+    fontSize: 40,
     fontWeight: "bold",
-    marginTop: 40,
+    marginTop: 10,
     textAlign: "center",
   },
   subtitle: {
@@ -84,6 +91,7 @@ export const styles = StyleSheet.create({
   },
   removeText: {
     color: colors.red,
+    fontSize: 17,
     fontFamily: "InstrumentRegular",
     fontWeight: "bold",
   },
@@ -91,9 +99,10 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     borderColor: colors.navy,
     borderRadius: 8,
-    borderWidth: 2,
+    borderWidth: 1,
     marginTop: 8,
-    padding: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
   },
   calculateButton: {
     alignItems: "center",
@@ -135,12 +144,12 @@ export const styles = StyleSheet.create({
     marginBottom: 8,
   },
   headerText: {
-    color: "#131381",
+    color: colors.navy,
     fontFamily: "InstrumentSemiBold",
     
   },
   tableInput: {
-    borderColor: "#131381",
+    borderColor: colors.navy,
     borderWidth: 1,
     borderRadius: 6,
     fontSize: 15,
