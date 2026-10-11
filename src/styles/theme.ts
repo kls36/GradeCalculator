@@ -7,7 +7,8 @@ export const colors = {
   white: "#FFFFFF",
   gray: "#808080",
   black: "#000000",
-  cornBlue: "#6495ED"
+  cornBlue: "#6495ED",
+  red: "#B91C1C"
 };
 export const fonts = {
   InstrumentRegular: require("../../assets/fonts/static/InstrumentSans-Regular.ttf"),
@@ -18,7 +19,7 @@ export const fonts = {
 export const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#F6F6E6",
+    backgroundColor: colors.beige,
   },
   scrollContent: {
     flexGrow: 1,
@@ -48,9 +49,9 @@ export const styles = StyleSheet.create({
   button: {
     backgroundColor: colors.navy,
     borderRadius: 8,
-    marginTop: 24,
-    paddingHorizontal: 24,
-    paddingVertical: 12,
+    marginTop: 15,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
   },
 
   buttonText: {
@@ -82,38 +83,39 @@ export const styles = StyleSheet.create({
     textAlign: "center",
   },
   removeText: {
-    color: "#B91C1C",
+    color: colors.red,
     fontFamily: "InstrumentRegular",
     fontWeight: "bold",
   },
   addButton: {
     alignItems: "center",
-    borderColor: "#131381",
+    borderColor: colors.navy,
     borderRadius: 8,
     borderWidth: 2,
-    marginTop: 22,
-    padding: 14,
+    marginTop: 8,
+    padding: 8,
   },
   calculateButton: {
     alignItems: "center",
-    backgroundColor: "#131381",
+    backgroundColor: colors.navy,
     borderRadius: 8,
-    marginTop: 14,
+    marginTop: 5,
     padding: 15,
   },
   resultBox: {
     alignItems: "center",
-    backgroundColor: "white",
+    backgroundColor: colors.white,
     borderRadius: 10,
-    borderColor: "navy",
+    borderColor: colors.navy,
     borderWidth: 2,
-    marginTop: 24,
-    padding: 20,
+    marginTop: 20,
+    padding: 15,
   },
   resultLabel: {
     color: "#131381",
     fontFamily: "InstrumentRegular",
     fontSize: 18,
+    textAlign: 'center',
   },
   resultGrade: {
     color: "#131381",
@@ -126,7 +128,6 @@ export const styles = StyleSheet.create({
     marginTop: 24,
     paddingBottom: 8,
   },
-
   tableRow: {
     flexDirection: "row",
     alignItems: "center",
@@ -179,7 +180,6 @@ export const styles = StyleSheet.create({
   footer: {
     width: "100%",
     alignItems: "center",
-    paddingBottom: 12,
   },
   resultSlot: {
     minHeight: 70,

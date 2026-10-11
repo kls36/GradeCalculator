@@ -18,3 +18,9 @@ export type GradeCategory = {
     if (grade >= 60) return "D";
     return "F";
   }
+  export function getTotalWeight(categories: GradeCategory[]) {
+    return categories.reduce(
+      (total, category) => total + Number(category.weight || 0),
+      0
+    );
+  }

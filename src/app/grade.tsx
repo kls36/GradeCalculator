@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 import { styles } from "../styles/theme";
 import { Link } from "expo-router";
-import {calculateWeightedGrade, getLetterGrade, GradeCategory,} from "../utils/gradeCalc";
+import {calculateWeightedGrade, getLetterGrade, GradeCategory, getTotalWeight} from "../utils/gradeCalc";
 
 
 const initialCategories: GradeCategory[] = [
@@ -11,6 +11,7 @@ const initialCategories: GradeCategory[] = [
   { id: "2", name: "Quizzes", grade: "", weight: "20" },
   { id: "3", name: "Exams", grade: "", weight: "50" },
 ];
+
 
 export default function Grade() {
   const [categories, setCategories] = useState<GradeCategory[]>(
@@ -49,11 +50,25 @@ export default function Grade() {
   function resetCalculator() {
     setCategories(initialCategories.map((category) => ({ ...category })));
     setFinalGrade(null);
+    setWeightError("");
   }
   
-  function calculateGrade() {
-    setFinalGrade(calculateWeightedGrade(categories));
+  const [weightError, setWeightError] = useState("");
+
+function calculateGrade() {
+  const totalWeight = getTotalWeight(categories);
+
+  if (Math.abs(totalWeight - 100) > 0.01) {
+    setWeightError(
+      `Check your category weights, they add up to ${totalWeight}%  but they should equal 100%.`
+    );
+    setFinalGrade(null);
+    return;
   }
+
+  setWeightError("");
+  setFinalGrade(calculateWeightedGrade(categories));
+}
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -131,6 +146,11 @@ export default function Grade() {
           <Pressable style={styles.calculateButton} onPress={calculateGrade}>
             <Text style={styles.buttonText}>Calculate Final Grade</Text>
           </Pressable>
+          {weightError !== "" && (
+            <View style={styles.resultBox}>
+              <Text style={styles.resultLabel}>{weightError}</Text>
+            </View>
+          )}
           <View style={styles.resultSlot}>
             {finalGrade !== null && (
               <View style={styles.resultBox}>
